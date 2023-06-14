@@ -88,16 +88,34 @@ function ataqueAleatorioRival() {
     } else if (ataqueAleatorio == 3) {
         ataqueRival = '💧';
     }
-    crearMensaje();
+    resultadoDelAtaque();
 }
 
-function crearMensaje() {
+function resultadoDelAtaque() {
+    if (ataqueJugador == ataqueRival) {
+        crearMensaje("EMPATE: 🙍🏻‍♂️ 🤖");
+    } else if (ataqueJugador == '🌿' && ataqueRival == '💧') {
+        crearMensaje("GANADOR: 🙍🏻‍♂️ => 🌿");
+    } else if (ataqueJugador == '🔥' && ataqueRival == '🌿') {
+        crearMensaje("GANADOR: 🙍🏻‍♂️ => 🔥");
+    } else if (ataqueJugador == '💧' && ataqueRival == '🔥') {
+        crearMensaje("GANADOR: 🙍🏻‍♂️ => 💧");
+    } else {
+        crearMensaje("GANADOR: 🤖 => " + ataqueRival);
+    }
+}
+
+function crearMensaje(resultado) {
     let sectionMensajes = document.getElementById('section-mensaje');
 
     let mensaje = document.createElement('p');
-    mensaje.innerHTML = ('Ataque Jugador: ' + ataqueJugador + ' VS ' + ataqueRival + ' Ataque Rival');
+    mensaje.innerHTML = ('🙍🏻‍♂️ : ' + ataqueJugador + ' vs ' + ataqueRival + ' : 🤖');
+
+    let definicionAtaque = document.createElement('p');
+    definicionAtaque.innerHTML = (resultado);
 
     sectionMensajes.appendChild(mensaje);
+    sectionMensajes.appendChild(definicionAtaque);
 }
 
 function reiniciar() {
