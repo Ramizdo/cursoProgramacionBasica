@@ -1,5 +1,7 @@
 let ataqueJugador;
 let ataqueRival;
+let vidasJugador = 3;
+let vidasRival = 3;
 
 function iniciarJuego() {
     let btnMokepon = document.getElementById('btn-mokepon');
@@ -13,6 +15,7 @@ function iniciarJuego() {
 
     let btnAgua = document.getElementById('btn-agua');
     btnAgua.addEventListener('click', ataqueAgua);
+
 
 }
 
@@ -103,6 +106,7 @@ function resultadoDelAtaque() {
     } else {
         crearMensaje("GANADOR: 🤖 => " + ataqueRival);
     }
+    contadorVidas();
 }
 
 function crearMensaje(resultado) {
@@ -116,6 +120,42 @@ function crearMensaje(resultado) {
 
     sectionMensajes.appendChild(mensaje);
     sectionMensajes.appendChild(definicionAtaque);
+}
+
+function contadorVidas() {
+    let nuevasVidasJugador = document.getElementById('vidas-jugador');
+    let nuevasVidasRival = document.getElementById('vidas-rival');
+
+    if (ataqueJugador == ataqueRival) {
+        vidasJugador = vidasJugador;
+        vidasRival = vidasRival;
+    } else if ((ataqueJugador == '🌿' && ataqueRival == '💧') || (ataqueJugador == '🔥' && ataqueRival == '🌿') || (ataqueJugador == '💧' && ataqueRival == '🔥')) {
+
+        vidasRival = vidasRival - 1;
+        if (vidasRival == 2) {
+            nuevasVidasRival.innerHTML = ('❤️❤️');
+        } else if (vidasRival == 1) {
+            nuevasVidasRival.innerHTML = ('❤️');
+        } else if (vidasRival == 0) {
+            nuevasVidasRival.innerHTML = ('');
+        }
+    } else {
+        vidasJugador = vidasJugador - 1;
+        vidasRival = vidasRival;
+        if (vidasJugador == 2) {
+            nuevasVidasJugador.innerHTML = ('❤️❤️');
+        } else if (vidasJugador == 1) {
+            nuevasVidasJugador.innerHTML = ('❤️');
+        } else if (vidasJugador == 0) {
+            nuevasVidasJugador.innerHTML = ('');
+        }
+    }
+    console.log('Jugador: ' + vidasJugador)
+    console.log('Rival: ' + vidasRival)
+    //if (ataqueJugador) {
+    //nuevasVidasJugador.innerHTML = ('❤️❤️');
+    //nuevasVidasRival.innerHTML = ('❤️❤️');
+    //}
 }
 
 function reiniciar() {
