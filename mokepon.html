@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepones</title>
+    <script src="./js/mokepon.js"></script>
+</head>
+
+<body>
+
+    <h1>MOKEPONES 🌿 🔥 💧</h1>
+
+    <section id="seleccionar-mokepon">
+        <h2>Elige Mokepon para la batalla:</h2>
+
+        <input type="radio" name="mascota" id="hipodoge" />
+        <label for="hipodoge">Hipodoge</label>
+
+        <input type="radio" name="mascota" id="capipepo" />
+        <label for="capipepo">Capipepo</label>
+
+        <input type="radio" name="mascota" id="ratigueya" />
+        <label for="ratigueya">Ratigueya</label>
+
+        <input type="radio" name="mascota" id="langostelvis" />
+        <label for="langostelvis">Langostelvis</label>
+
+        <input type="radio" name="mascota" id="tucapalma" />
+        <label for="tucapalma">Tucapalma</label>
+
+        <input type="radio" name="mascota" id="pydos" />
+        <label for="pydos">Pydos</label>
+
+        <button id="btn-mokepon">Seleccionar</button>
+    </section>
+
+    <section id="seleccionar-ataque">
+        <h2>Elije Ataque:</h2>
+
+        <p>Vidas:</p>
+        <p>Tu <span id="nombre-mokepon-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+        <p>Rival <span id="nombre-mokepon-rival"></span> tiene <span id="vidas-rival">3</span> vidas</p>
+        <P>
+            <button id="btn-tierra">Tierra 🌿</button>
+            <button id="btn-fuego">Fuego 🔥</button>
+            <button id="btn-agua">Agua 💧</button>
+        </P>
+    </section>
+
+    <section id="mensajes">
+        <p>Tu mokepon ha usado un ataque de FUEGO</p>
+    </section>
+
+    <section id="reiniciar">
+        <button id="btn-reiniciar">Reiniciar</button>
+    </section>
+
+
+</body>
+
+</html>
