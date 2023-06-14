@@ -1,4 +1,5 @@
 let ataqueJugador;
+let ataqueRival;
 
 function iniciarJuego() {
     let btnMokepon = document.getElementById('btn-mokepon');
@@ -63,37 +64,44 @@ function aleatorio(min, max) {
 }
 
 function ataquePlanta() {
-    ataqueJugador = document.getElementById('ataque-jugador');
-    ataqueJugador.innerHTML = '🌿';
-
-    ataqueRival();
+    ataqueJugador = '🌿';
+    ataqueAleatorioRival();
 }
 
 function ataqueFuego() {
-    ataqueJugador = document.getElementById('ataque-jugador');
-    ataqueJugador.innerHTML = '🔥';
-
-    ataqueRival();
+    ataqueJugador = '🔥';
+    ataqueAleatorioRival();
 }
 
 function ataqueAgua() {
-    ataqueJugador = document.getElementById('ataque-jugador');
-    ataqueJugador.innerHTML = '💧'
-
-    ataqueRival();
+    ataqueJugador = '💧'
+    ataqueAleatorioRival();
 }
 
-function ataqueRival() {
+function ataqueAleatorioRival() {
     let ataqueAleatorio = aleatorio(1, 3);
-    let spanAtaqueRival = document.getElementById('ataque-rival');
 
     if (ataqueAleatorio == 1) {
-        spanAtaqueRival.innerHTML = '🌿';
+        ataqueRival = '🌿';
     } else if (ataqueAleatorio == 2) {
-        spanAtaqueRival.innerHTML = '🔥';
+        ataqueRival = '🔥';
     } else if (ataqueAleatorio == 3) {
-        spanAtaqueRival.innerHTML = '💧';
+        ataqueRival = '💧';
     }
+    crearMensaje();
+}
+
+function crearMensaje() {
+    let sectionMensajes = document.getElementById('section-mensaje');
+
+    let mensaje = document.createElement('p');
+    mensaje.innerHTML = ('Ataque Jugador: ' + ataqueJugador + ' VS ' + ataqueRival + ' Ataque Rival');
+
+    sectionMensajes.appendChild(mensaje);
+}
+
+function reiniciar() {
+
 }
 
 window.addEventListener('load', iniciarJuego);
