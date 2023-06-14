@@ -4,13 +4,14 @@ function iniciarJuego() {
     let btnMokepon = document.getElementById('btn-mokepon');
     btnMokepon.addEventListener('click', seleccionarMokepon);
 
-    let btnTierra = document.getElementById('btn-tierra');
-    let btnFuego = document.getElementById('btn-fuego');
-    let btnAgua = document.getElementById('btn-agua');
+    let btnTierra = document.getElementById('btn-planta');
+    btnTierra.addEventListener('click', ataquePlanta);
 
-    btnTierra.addEventListener('click', atacar);
-    btnFuego.addEventListener('click', atacar);
-    btnAgua.addEventListener('click', atacar);
+    let btnFuego = document.getElementById('btn-fuego');
+    btnFuego.addEventListener('click', ataqueFuego);
+
+    let btnAgua = document.getElementById('btn-agua');
+    btnAgua.addEventListener('click', ataqueAgua);
 
 }
 
@@ -34,36 +35,65 @@ function seleccionarMokepon() {
     } else {
         alert("DEBES SELECCIONAR UN MOKEPON")
     }
-    seleccionarMokeponRival()
+    mokeponRival()
 }
 
-function seleccionarMokeponRival() {
+function mokeponRival() {
 
-    let numAleatorio = aleatorio(1, 6);
+    let mokeponAleatorio = aleatorio(1, 6);
     let spanNombreMokeponRival = document.getElementById('nombre-mokepon-rival');
 
-    if (numAleatorio == 1) {
+    if (mokeponAleatorio == 1) {
         spanNombreMokeponRival.innerHTML = 'Hipodoge';
-    } else if (numAleatorio == 2) {
+    } else if (mokeponAleatorio == 2) {
         spanNombreMokeponRival.innerHTML = 'Capipepo';
-    } else if (numAleatorio == 3) {
+    } else if (mokeponAleatorio == 3) {
         spanNombreMokeponRival.innerHTML = 'Ratigueya';
-    } else if (numAleatorio == 4) {
+    } else if (mokeponAleatorio == 4) {
         spanNombreMokeponRival.innerHTML = 'Langostelvis';
-    } else if (numAleatorio == 5) {
+    } else if (mokeponAleatorio == 5) {
         spanNombreMokeponRival.innerHTML = 'Tucapalma';
-    } else if (numAleatorio == 6) {
-        spanNombreMokeponRival.innerHTML = 'Pydos';
+    } else if (mokeponAleatorio == 6) {
+        spanNombreMokeponRival.innerHTML = 'Pydos'
     }
 }
 
 function aleatorio(min, max) {
-    let numAleatorio = Math.floor(Math.random() * (max - min + 1) + min);
-    return numAleatorio;
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function atacar() {
+function ataquePlanta() {
+    ataqueJugador = document.getElementById('ataque-jugador');
+    ataqueJugador.innerHTML = '🌿';
 
+    ataqueRival();
+}
+
+function ataqueFuego() {
+    ataqueJugador = document.getElementById('ataque-jugador');
+    ataqueJugador.innerHTML = '🔥';
+
+    ataqueRival();
+}
+
+function ataqueAgua() {
+    ataqueJugador = document.getElementById('ataque-jugador');
+    ataqueJugador.innerHTML = '💧'
+
+    ataqueRival();
+}
+
+function ataqueRival() {
+    let ataqueAleatorio = aleatorio(1, 3);
+    let spanAtaqueRival = document.getElementById('ataque-rival');
+
+    if (ataqueAleatorio == 1) {
+        spanAtaqueRival.innerHTML = '🌿';
+    } else if (ataqueAleatorio == 2) {
+        spanAtaqueRival.innerHTML = '🔥';
+    } else if (ataqueAleatorio == 3) {
+        spanAtaqueRival.innerHTML = '💧';
+    }
 }
 
 window.addEventListener('load', iniciarJuego);
