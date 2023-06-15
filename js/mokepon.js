@@ -16,12 +16,14 @@ function iniciarJuego() {
     let btnAgua = document.getElementById('btn-agua');
     btnAgua.addEventListener('click', ataqueAgua);
 
+    let btnReiniciarJuego = document.getElementById('btn-reiniciar');
+    btnReiniciarJuego.addEventListener('click', reiniciarJuego);
 
 }
 
 function seleccionarMokepon() {
-    let inputhipodoge = document.getElementById('hipodoge'); // Esto es una manera de hacerlo
 
+    let inputhipodoge = document.getElementById('hipodoge'); // Esto es una manera de hacerlo
     let spanNombreMokeponJugador = document.getElementById('nombre-mokepon-jugador');
 
     if (inputhipodoge.checked) {
@@ -39,6 +41,10 @@ function seleccionarMokepon() {
     } else {
         alert("DEBES SELECCIONAR UN MOKEPON")
     }
+
+    let btnMokepon = document.getElementById('btn-mokepon');
+    btnMokepon.disabled = true;
+
     mokeponRival()
 }
 
@@ -122,44 +128,63 @@ function crearMensaje(resultado) {
     sectionMensajes.appendChild(definicionAtaque);
 }
 
+function crearMensajeFinal(resultadoFinal) {
+    let sectionMensajes = document.getElementById('section-mensaje');
+    let mensaje = document.createElement('p');
+    mensaje.innerHTML = resultadoFinal;
+    sectionMensajes.appendChild(mensaje);
+}
+
 function contadorVidas() {
     let nuevasVidasJugador = document.getElementById('vidas-jugador');
     let nuevasVidasRival = document.getElementById('vidas-rival');
 
     if (ataqueJugador == ataqueRival) {
-        vidasJugador = vidasJugador;
-        vidasRival = vidasRival;
-    } else if ((ataqueJugador == '🌿' && ataqueRival == '💧') || (ataqueJugador == '🔥' && ataqueRival == '🌿') || (ataqueJugador == '💧' && ataqueRival == '🔥')) {
 
-        vidasRival = vidasRival - 1;
+    } else if ((ataqueJugador == '🌿' && ataqueRival == '💧')
+        || (ataqueJugador == '🔥' && ataqueRival == '🌿')
+        || (ataqueJugador == '💧' && ataqueRival == '🔥')) {
+
+        vidasRival--;
         if (vidasRival == 2) {
             nuevasVidasRival.innerHTML = ('❤️❤️');
         } else if (vidasRival == 1) {
             nuevasVidasRival.innerHTML = ('❤️');
         } else if (vidasRival == 0) {
             nuevasVidasRival.innerHTML = ('');
+            crearMensajeFinal('HAS GANADO LA BATALLA');
+            desactivarBotones();
         }
+
     } else {
-        vidasJugador = vidasJugador - 1;
-        vidasRival = vidasRival;
+        vidasJugador--;
         if (vidasJugador == 2) {
             nuevasVidasJugador.innerHTML = ('❤️❤️');
         } else if (vidasJugador == 1) {
             nuevasVidasJugador.innerHTML = ('❤️');
         } else if (vidasJugador == 0) {
             nuevasVidasJugador.innerHTML = ('');
+            crearMensajeFinal('TU MOKEPON HA MUERTO');
+            desactivarBotones();
         }
     }
-    console.log('Jugador: ' + vidasJugador)
-    console.log('Rival: ' + vidasRival)
-    //if (ataqueJugador) {
-    //nuevasVidasJugador.innerHTML = ('❤️❤️');
-    //nuevasVidasRival.innerHTML = ('❤️❤️');
-    //}
+
 }
 
-function reiniciar() {
+function desactivarBotones() {
 
+    let btnTierra = document.getElementById('btn-planta');
+    btnTierra.disabled = true;
+
+    let btnFuego = document.getElementById('btn-fuego');
+    btnFuego.disabled = true;
+
+    let btnAgua = document.getElementById('btn-agua');
+    btnAgua.disabled = true;
+
+}
+function reiniciarJuego() {
+    location.reload();
 }
 
 window.addEventListener('load', iniciarJuego);
