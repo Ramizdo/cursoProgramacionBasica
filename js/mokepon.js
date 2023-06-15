@@ -4,6 +4,13 @@ let vidasJugador = 3;
 let vidasRival = 3;
 
 function iniciarJuego() {
+
+    let sectionAtaque = document.getElementById('seleccionar-ataque');
+    sectionAtaque.style.display = 'none';
+
+    let sectionReiniciar = document.getElementById('section-reiniciar');
+    sectionReiniciar.style.display = 'none';
+
     let btnMokepon = document.getElementById('btn-mokepon');
     btnMokepon.addEventListener('click', seleccionarMokepon);
 
@@ -22,6 +29,11 @@ function iniciarJuego() {
 }
 
 function seleccionarMokepon() {
+    let seleccionarMokepon = document.getElementById('seleccionar-mokepon');
+    seleccionarMokepon.style.display = 'none';
+
+    let sectionAtaque = document.getElementById('seleccionar-ataque');
+    sectionAtaque.style.display = 'block';
 
     let inputhipodoge = document.getElementById('hipodoge'); // Esto es una manera de hacerlo
     let spanNombreMokeponJugador = document.getElementById('nombre-mokepon-jugador');
@@ -41,9 +53,6 @@ function seleccionarMokepon() {
     } else {
         alert("DEBES SELECCIONAR UN MOKEPON")
     }
-
-    let btnMokepon = document.getElementById('btn-mokepon');
-    btnMokepon.disabled = true;
 
     mokeponRival()
 }
@@ -133,6 +142,9 @@ function crearMensajeFinal(resultadoFinal) {
     let mensaje = document.createElement('p');
     mensaje.innerHTML = resultadoFinal;
     sectionMensajes.appendChild(mensaje);
+
+    let sectionReiniciar = document.getElementById('section-reiniciar');
+    sectionReiniciar.style.display = 'block';
 }
 
 function contadorVidas() {
