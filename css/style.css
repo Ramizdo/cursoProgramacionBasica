@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+}
+
+#seleccionar-mokepon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    color: white;
+    font-size: 48px;
+}
+
+.subtitulo {
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+.tarjetas {
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.tarjeta-de-mokepon p {
+    background-color: black;
+    text-align: center;
+    width: 190px;
+}
+
+.tarjeta-de-mokepon img {
+    width: 10vw;
+    height: 19vh;
+    padding: 20vh;
+}
+
+.fcbarcelona {
+    background: url("../assets/fondoBarca.jpeg");
+    background-size: 200px 300px;
+}
+
+.realmadrid {
+    background: url("../assets/fondoMadrid.jpeg");
+    background-size: 200px 300px;
+}
+
+.arsenal {
+    background-image: url("../assets/fondoArsenal.jpeg");
+    background-size: 200px 300px;
+}
+
+.botonSeleccionar {
+    background: transparent;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 10px;
+    margin-top: 100px;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+/* .manUnited {
+    width: 200px;
+    height: 300px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    box-sizing: border-box;
+    background-image: url("../assets/fondoUnited.jpeg");
+    background-size: 200px 300px;
+    opacity: 0.7;
+    border-radius: 30px;
+    display: flex;
+}
+
+.manUnited img {
+    width: 150px;
+    height: 150px;
+}
+
+.psg {
+    width: 200px;
+    height: 300px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    box-sizing: border-box;
+    background-image: url("../assets/fondoPsg.jpeg");
+    background-size: 200px 300px;
+    opacity: 0.7;
+    border-radius: 30px;
+    display: flex;
+}
+
+.psg img {
+    width: 150px;
+    height: 150px;
+}
+
+.manCity {
+    width: 200px;
+    height: 300px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    box-sizing: border-box;
+    background-image: url("../assets/fondoCity.webp");
+    background-size: 200px 300px;
+    opacity: 0.7;
+    border-radius: 30px;
+    display: flex;
+}
+
+.manCity img {
+    width: 150px;
+    height: 150px;
+} */
+
+input {
+    display: none;
+}

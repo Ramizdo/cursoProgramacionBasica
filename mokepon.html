@@ -7,38 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mokepones</title>
     <script src="./js/mokepon.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-
-    <h1>MOKEPONES 🌿 🔥 💧</h1>
-
     <section id="seleccionar-mokepon">
-        <h2>Elige Mokepon:</h2>
+        <h1 class="titulo">¡Ronda de Penaltis!</h1>
+        <h2 class="subtitulo">Elige Equipo:</h2>
 
-        <input type="radio" name="mascota" id="hipodoge" />
-        <label for="hipodoge">Hipodoge</label>
+        <div class="tarjetas">
+            <input type="radio" name="mascota" id="hipodoge" />
+            <label class="tarjeta-de-mokepon fcbarcelona" for="hipodoge">
+                <p>FCBarcelona</p>
+                <img class="imgBarca" src="./assets/pruebaBarcelona.png" alt="FCBarcelona">
+            </label>
 
-        <input type="radio" name="mascota" id="capipepo" />
-        <label for="capipepo">Capipepo</label>
+            <input type="radio" name="mascota" id="capipepo" />
+            <label class="tarjeta-de-mokepon realmadrid" for="capipepo">
+                <p>Real Madrid</p>
+                <img class="imgMadrid" src="./assets/pruebaMadrid.png" alt="Real Madrid">
+            </label>
 
-        <input type="radio" name="mascota" id="ratigueya" />
-        <label for="ratigueya">Ratigueya</label>
+            <!-- <input type="radio" name="mascota" id="ratigueya" />
+            <label class="tarjeta-de-mokepon manUnited" for="ratigueya">
+                <p>Manchester United</p>
+                <img src="./assets/logoManUnited.png" alt="Manchester United">
+            </label>
 
-        <input type="radio" name="mascota" id="langostelvis" />
-        <label for="langostelvis">Langostelvis</label>
+            <input type="radio" name="mascota" id="langostelvis" />
+            <label class="tarjeta-de-mokepon psg" for="langostelvis">
+                <p>Paris Saint Germain</p>
+                <img src="./assets/logoPsg.png" alt="Paris Saint Germain">
+            </label>
 
-        <input type="radio" name="mascota" id="tucapalma" />
-        <label for="tucapalma">Tucapalma</label>
+            <input type="radio" name="mascota" id="tucapalma" />
+            <label class="tarjeta-de-mokepon manCity" for="tucapalma">
+                <p>Manchester City</p>
+                <img src="./assets/logoManCity.png" alt="Manchester City">
+            </label> -->
 
-        <input type="radio" name="mascota" id="pydos" />
-        <label for="pydos">Pydos</label>
-
-        <button id="btn-mokepon">Seleccionar</button>
+            <input type="radio" name="mascota" id="pydos" />
+            <label class="tarjeta-de-mokepon arsenal" for="pydos">
+                <p>Arsenal</p>
+                <img src="./assets/pruebaArsenal.png" alt="arsenal">
+            </label>
+        </div>
+        <button class="botonSeleccionar" id="btn-mokepon">COMENZAR</button>
 
     </section>
 
     <section id="seleccionar-ataque">
+        <h1 class="titulo">MOKEPONES 🌿 🔥 💧</h1>
 
         <p>🙍🏻‍♂️: <span id="nombre-mokepon-jugador"></span><span id="vidas-jugador">❤️❤️❤️</span></p>
         <p>🤖: <span id="nombre-mokepon-rival"></span><span id="vidas-rival">❤️❤️❤️</span></p>
