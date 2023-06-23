@@ -5,25 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mokepones</title>
-    <script src="./js/mokepon.js"></script>
+    <title>Penaltis</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <section id="seleccionar-mokepon">
-        <h1 class="titulo">¡Ronda de Penaltis!</h1>
+        <h1 class="titulo">¡Penaltis!</h1>
         <h2 class="subtitulo">Elige Equipo:</h2>
 
         <div class="tarjetas">
-            <input type="radio" name="mascota" id="hipodoge" />
-            <label class="tarjeta-de-mokepon fcbarcelona" for="hipodoge">
+            <input type="radio" name="mascota" id="barcelona" />
+            <label class="tarjeta-de-mokepon fcbarcelona" for="barcelona">
                 <p>FCBarcelona</p>
                 <img class="imgBarca" src="./assets/pruebaBarcelona.png" alt="FCBarcelona">
             </label>
 
-            <input type="radio" name="mascota" id="capipepo" />
-            <label class="tarjeta-de-mokepon realmadrid" for="capipepo">
+            <input type="radio" name="mascota" id="realMadrid" />
+            <label class="tarjeta-de-mokepon realmadrid" for="realMadrid">
                 <p>Real Madrid</p>
                 <img class="imgMadrid" src="./assets/pruebaMadrid.png" alt="Real Madrid">
             </label>
@@ -46,7 +45,7 @@
                 <img src="./assets/logoManCity.png" alt="Manchester City">
             </label> -->
 
-            <input type="radio" name="mascota" id="pydos" />
+            <input type="radio" name="mascota" id="arsenal" />
             <label class="tarjeta-de-mokepon arsenal" for="pydos">
                 <p>Arsenal</p>
                 <img src="./assets/pruebaArsenal.png" alt="arsenal">
@@ -57,29 +56,40 @@
     </section>
 
     <section id="seleccionar-ataque">
-        <h1 class="titulo">MOKEPONES 🌿 🔥 💧</h1>
+        <h1 class="titulo">Ronda de Penaltis</h1>
 
-        <p>🙍🏻‍♂️: <span id="nombre-mokepon-jugador"></span><span id="vidas-jugador">❤️❤️❤️</span></p>
-        <p>🤖: <span id="nombre-mokepon-rival"></span><span id="vidas-rival">❤️❤️❤️</span></p>
+        <h2 class="subtitulo">Elige a donde quieres patear</h2>
+        <div class="botones-disparo">
+            <button id="btn-planta">⬅</button>
+            <button id="btn-fuego">⬆</button>
+            <button id="btn-agua">⬇</button>
+        </div>
 
-        <h2>Elije Ataque:</h2>
 
-        <P>
-            <button id="btn-planta">Planta 🌿</button>
-            <button id="btn-fuego">Fuego 🔥</button>
-            <button id="btn-agua">Agua 💧</button>
-        </P>
+        <div id="section-mensaje">
+            <p id="resultadoDelPenal">Buena Suerte</p>
+
+            <section id="section-reiniciar">
+                <button id="btn-reiniciar">Reiniciar</button>
+            </section>
+        </div>
+
+        <div class="penales">
+            <div class="penales-pateados">
+                <span id="logoJugador"></span>
+                <p id="vidas-jugador">⚽️⚽️⚽️</p>
+                <!-- <p id="nombre-mokepon-jugador"></p> -->
+                <div id="disparo-jugador"></div>
+            </div>
+            <div class="penales-tapados">
+                <p id="vidas-rival">⚽️⚽️⚽️</p>
+                <span id="logoRival"></span>
+                <!-- <p id="nombre-mokepon-rival"></p> -->
+                <div id="arquero"></div>
+            </div>
+        </div>
     </section>
-
-    <section id="section-mensaje">
-
-    </section>
-
-    <section id="section-reiniciar">
-        <button id="btn-reiniciar">Reiniciar</button>
-    </section>
-
-
+    <script src="./js/mokepon.js"></script>
 </body>
 
 </html>
